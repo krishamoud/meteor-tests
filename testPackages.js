@@ -5,6 +5,7 @@ if (Meteor.isClient) {
 
   Template.hello.helpers({
     counter: function () {
+      
       return Session.get("counter");
     }
   });
@@ -13,22 +14,12 @@ if (Meteor.isClient) {
     'click button': function () {
       // increment the counter when button is clicked
       Session.set("counter", Session.get("counter") + 1);
-      Meteor.call("addPlayer");
-
     }
 
   });
 }
 
 if (Meteor.isServer) {
-  Meteor.methods({
-    "addPlayer":function(){
-      var count = Players.find().count() + 1;
-      Players.insert({
-        "name":"Kris" + count
-      });
-    }
-  })
   Meteor.startup(function () {
     // code to run on server at startup
     if(Players.find().count() == 0){
