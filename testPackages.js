@@ -26,7 +26,7 @@ if (Meteor.isServer) {
       var count = Players.find().count() + 1;
       Players.insert({
         "name":"Kris" + count
-      })
+      });
     }
   })
   Meteor.startup(function () {

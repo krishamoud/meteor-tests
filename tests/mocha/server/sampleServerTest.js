@@ -6,10 +6,10 @@ if (!(typeof MochaWeb === 'undefined')){
       });
     });
 
-    /*describe("Server initialization", function(){
+    describe("Server initialization", function(){
       it("should have greater than 0 players in the db after initialization", function(){
         chai.assert(Players.find().count() > 0);
       });
-    });*/
+    });
   });
 }
